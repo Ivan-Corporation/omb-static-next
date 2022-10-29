@@ -18,6 +18,16 @@
 
 <script>
 export default {
+	head: {
+		title: 'About page',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'About Nuxt'
+			}
+		]
+	},
 	transition: 'bounce',
 	asyncData() {
 		return {

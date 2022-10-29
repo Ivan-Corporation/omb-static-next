@@ -15,7 +15,21 @@
 				<li>
 					<NuxtLink to="/parent">Parent</NuxtLink>
 				</li>
-
+				<li>
+					<NuxtLink to="/loading">Loading</NuxtLink>
+				</li>
+				<li>
+					<NuxtLink to="/login">Login Layout</NuxtLink>
+				</li>
+				<li>
+					<NuxtLink to="/planets">Planets loading</NuxtLink>
+				</li>
+				<li>
+					<NuxtLink to="/todo">Vuex store todo</NuxtLink>
+				</li>
+				<li>
+					<NuxtLink to="/named-middleware">Named Middleware</NuxtLink>
+				</li>
 			</ul>
 		</nav>
 		<main>
@@ -26,14 +40,8 @@
 </template>
 
 <style>
-/* home route and active route will show in bold as it matches / and /about */
-a.nuxt-link-active {
-	font-weight: bold;
-}
-
-/* exact link will show the primary color for only the exact matching link */
-a.nuxt-link-exact-active {
-	color: #00c58e;
+:root {
+	--primary-color: #00c58e;
 }
 
 body {
@@ -43,16 +51,61 @@ body {
 	margin: 0;
 }
 
+a,
+a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover,
+a.nuxt-link-exact-active {
+	color: var(--primary-color);
+}
+
 main {
 	margin: 0 auto;
+	margin-top: 25vh;
+	margin-bottom: 2rem;
 	padding: 0 1rem;
-	margin-top: 100px;
 	max-width: 1280px;
 	text-align: center;
 }
 
-img {
-	margin-bottom: 1rem;
+button {
+	background: var(--primary-color);
+	padding: 0.75rem 1.5rem;
+	outline: none;
+	border-radius: 0.5rem;
+	font-size: 1rem;
+	border: none;
+	cursor: pointer;
+	color: white;
+	font-weight: 500;
+	text-transform: uppercase;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+	letter-spacing: 0.5px;
+	margin: 0 0.5rem;
+}
+
+button:hover {
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+		0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	opacity: 0.8;
+}
+
+input[type='text'] {
+	font-size: 16px;
+	padding: 0.75rem 1rem;
+	margin: 0 0.5rem;
+	margin-bottom: 0.5rem;
+	border: 1px solid #dedede;
+	border-radius: 0.5rem;
+	box-shadow: none;
+	box-sizing: border-box;
+}
+
+nav {
+	padding: 0 1rem;
 }
 
 ul {
@@ -67,90 +120,5 @@ li {
 	margin: 0 0.5rem;
 	padding: 0.25rem;
 	font-size: 1.2rem;
-}
-
-nav {
-	padding: 0 1rem;
-}
-
-a,
-a:visited {
-	text-decoration: none;
-	color: inherit;
-}
-
-a:hover {
-	color: #00c58e;
-}
-
-
-/* Animation */
-.page-enter-active,
-.page-leave-active {
-	transition: opacity 0.5s;
-}
-
-.page-enter,
-.page-leave-to {
-	opacity: 0;
-}
-
-.layout-enter-active,
-.layout-leave-active {
-	transition: opacity 0.5s;
-}
-
-.layout-enter,
-.layout-leave-to {
-	opacity: 0;
-}
-
-.slide-bottom-enter-active,
-.slide-bottom-leave-active {
-	transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
-}
-
-.slide-bottom-enter,
-.slide-bottom-leave-to {
-	opacity: 0;
-	transform: translate3d(0, 15px, 0);
-}
-
-.bounce-enter-active {
-	transform-origin: top;
-	animation: bounce-in 0.8s;
-}
-
-.bounce-leave-active {
-	transform-origin: top;
-	animation: bounce-out 0.5s;
-}
-
-@keyframes bounce-in {
-	0% {
-		transform: scale(0);
-	}
-
-	50% {
-		transform: scale(1.25);
-	}
-
-	100% {
-		transform: scale(1);
-	}
-}
-
-@keyframes bounce-out {
-	0% {
-		transform: scale(1);
-	}
-
-	50% {
-		transform: scale(1.25);
-	}
-
-	100% {
-		transform: scale(0);
-	}
 }
 </style>
